@@ -44,15 +44,15 @@ import arcpy
 
 # Conver raster to vector points
 
-in_path = "C:/Users/######//AOD/SLP/SLP_out/2012/"
-out_path = "C:/Users/######//GIS/AOD/SLP/2012_TX/"
+in_path = "C:/Users/data/2017/"
+out_path = "C:/Users/data/2017/output/"
 
  # Clip raster
 for i in range(365,366):
  in_raster = in_path +"prmsl"+str(i)+".img"
  out_feature =  "prmsl_2012_tx"+str(i)
- Clip_feature="C:/Users/xzhang10/Desktop/Infill/GIS/AOD/Boundary/Texas_extend.shp"
+ Clip_feature="C:/Users/data/2017/GIS/AOD/Boundary/subha.shp"
  arcpy.Clip_management(in_raster,"#",out_feature,Clip_feature,"#","ClippingGeometry","MAINTAIN_EXTENT")
  
  # Conver raster to vector points
-arcpy.RasterToPoint_conversion("prmsl_2012_tx"+str(i), out_path+"prmsl_2012_tx"+str(i)+".shp", "VALUE")
+arcpy.RasterToPoint_conversion("subhadeep_tx"+str(i), out_path+"subhadeep_tx"+str(i)+".shp", "VALUE")
